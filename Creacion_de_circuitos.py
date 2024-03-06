@@ -14,10 +14,6 @@ def verificar_resistencia(resistencia_usuario):
         resistencia_usuario = resistencia_usuario[:-1]
     return float(resistencia_usuario) * factor
 
-# Función para calcular la resistencia total en serie
-def resistencia_en_serie(resistencias):
-    return sum(resistencias)
-
 # Función para calcular la resistencia total en paralelo
 def resistencia_en_paralelo(resistencias):
     total = 0
@@ -37,8 +33,8 @@ def imprimir_circuito(fuente, resistencias):
     circuito += "--(GND)"
     print(circuito)
 
-# Función para formatear el valor de la resistencia con prefijos
-def formatear_valor(valor):
+# Función para configurar la resistencia con prefijos
+def modificacion_valor(valor):
     if valor >= 1e6:
         return f"{valor / 1e6:.2f} Mega"
     elif valor >= 1e3:
@@ -53,7 +49,7 @@ def formatear_valor(valor):
 # Función principal
 def main():
     # Input de valores
-    valor_fuente = float(input("Ingrese el valor de la fuente de voltaje: "))
+    valor_fuente = float(input("Por favor ingrese el valor de la fuente de voltaje: "))
 
     resistencias = []
     while True:
@@ -86,8 +82,8 @@ def main():
     corriente = valor_fuente / resistencia_total
 
     # Imprimir resultados
-    print("\nResistencia total del circuito:", formatear_valor(resistencia_total), "Ohmios")
-    print("Corriente resultante:", formatear_valor(corriente), "Amperios")
+    print("\nResistencia total del circuito:", modificacion_valor(resistencia_total), "Ohmios")
+    print("Corriente resultante:", modificacion_valor(corriente), "Amperios")
 
     # Imprimir representación esquemática del circuito
     imprimir_circuito(valor_fuente, resistencias)
