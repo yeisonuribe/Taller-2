@@ -1,5 +1,5 @@
 ## Este programa permite controlar el inventario de una tienda
-## Para esto se pone a dispocicion un menu con 6 opciones con las que se puede controlar el inventario 
+## Para esto se pone a disposición un menú con 6 opciones con las que se puede controlar el inventario
 
 
 
